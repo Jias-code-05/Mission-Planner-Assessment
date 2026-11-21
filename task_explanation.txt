@@ -1,0 +1,37 @@
+﻿Ubuntu’s built in screen recorder doesn’t support the mic function and the two other I installed gave horrible audio quality so here’s the explanation T_T
+
+In the simulation tab, I entered a command –home=34.068635,72.641571,346,82.
+This command takes latitude, longitude, altitude and bearing as parameters in order. I added this command because during takeoff, my plane would face North by default and takeoff in that direction and then made a huge turn to reach the first waypoint instead of taking off in the direction of waypoint A, like I wanted it to. The takeoff command did not take any parameters to change this, hence ended up going with this method. The bearing was calculated by giving claude my home coordinates and waypoint A’s coordinates.
+
+
+Waypoint 3= waypoint A
+Waypoint 5= waypoint B
+Waypoint 6= waypoint C 
+Waypoint 7= waypoint D
+Waypoint 9= waypoint E
+
+Waypoint 11= additional waypoint. Follows loiter_to_alt command. I added it to reduce the altitude before continuing with the landing sequence bc otherwise my plane was overshootingthe landing position. 
+
+WP_RADIUS: It is the maximum distance from a waypoint which when reached is counted as the waypoint being reached.
+
+WP_LOITER_RAD: It is the radius of the loiter around a waypoint. It cannot be too small since it’ll be hard for the plane to take sharp turns. If it is too large, it will be a waste of power.
+
+RTL_ALTITUDE: The altitude at which the plane loiters the home position.
+
+AIRSPEED_CRUISE: it is the default airspeed of the plane.
+
+AIRSPEED_MIN: minimum airspeed the plane is allowed to reach. If needs to be higher than the stall speed. In the landing approach, I reduced the speed but had to ensure that it was above the minimum_airspeed.
+
+AIRSPEED_MAX: maximum airspeed the plane is allowed to reach.
+
+ROLL_LIMIT_DEG: maiximum roll angle. The higher it is, the sharper the turns a plane can take. But if it’s too high, the plane can stall.
+
+ARSPD_USE: When parameter is 0, airspeed is logged but it is not used for flightcontrol or navigation. When it is 1, the airspeed data is used for navigation and flight control.
+
+
+
+
+
+
+
+
